@@ -7,10 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
 	    features = "src/test/resources/com/features/",
 	    glue = {"com.stepdefinations", "com.hooks"},
-	    plugin = {
-	        "pretty",
-	        "html:build/reports.html",
-	    },
+	    plugin = {"pretty","io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"},
 	    tags = "@login",
 	    publish = false, // used to move reports to CICD pipeline
 	    monochrome = false,

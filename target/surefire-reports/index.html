@@ -157,14 +157,14 @@
 	at com.stepdefinations.LoginSteps.user_should_be_login_successfully(LoginSteps.java:54)
 	at ✽.User should be login successfully(file:///C:/Users/durga/OneDrive/Desktop/Automation/BDD/ShopTestNG/src/test/resources/com/features/Login.feature:12)
 Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//a[@class=&apos;list-group-item&apos; and contains(text(),&apos;Logout&apos;)]&quot;}
-  (Session info: chrome=126.0.6478.63)
+  (Session info: chrome=126.0.6478.127)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4b9f3425a42206f3e2ebebb225810308, findElement {value=//a[@class=&apos;list-group-item&apos; and contains(text(),&apos;Logout&apos;)], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.63, chrome: {chromedriverVersion: 126.0.6478.63 (df799988fdc9..., userDataDir: C:\Users\durga\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53034}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53034/devtoo..., se:cdpVersion: 126.0.6478.63, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4b9f3425a42206f3e2ebebb225810308
+Command: [bd87ffadb29e6cfe1ccd70793c145859, findElement {using=xpath, value=//a[@class=&apos;list-group-item&apos; and contains(text(),&apos;Logout&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 126.0.6478.127, chrome: {chromedriverVersion: 126.0.6478.126 (d36ace6122e..., userDataDir: C:\Users\durga\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56935}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56935/devtoo..., se:cdpVersion: 126.0.6478.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: bd87ffadb29e6cfe1ccd70793c145859
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -301,20 +301,20 @@ data.addRows(3);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'com.runner.MyRunner')
-data.setCell(0, 3, 21486);
+data.setCell(0, 3, 18048);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'runScenario')
 data.setCell(1, 2, 'com.runner.MyRunner')
-data.setCell(1, 3, 4592);
+data.setCell(1, 3, 4149);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'runScenario')
 data.setCell(2, 2, 'com.runner.MyRunner')
-data.setCell(2, 3, 4210);
+data.setCell(2, 3, 4066);
 window.suiteTableData['Cucumber_Test_Suite']= { tableData: data, tableDiv: 'times-div-Cucumber_Test_Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 30 seconds</span>
+              <span class="suite-total-time">Total running time: 26 seconds</span>
               <div id="times-div-Cucumber_Test_Suite">
               </div> <!-- times-div-Cucumber_Test_Suite -->
             </div> <!-- times-div -->
@@ -342,26 +342,26 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.runner.MyRunner</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
-                <span class="method-name">setUpClass(org.testng.TestRunner@54336976)</span>
+                <span class="method-name">setUpClass(org.testng.TestRunner@3becc950)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">runScenario("Login with valid credentails", "Login Functionality")</span>
-                <span class="method-start">617 ms</span>
+                <span class="method-start">391 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Login with invalid email", "Login Functionality")</span>
-                <span class="method-start">22124 ms</span>
+                <span class="method-start">18454 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">runScenario("Login with invalid password", "Login Functionality")</span>
-                <span class="method-start">26717 ms</span>
+                <span class="method-start">22520 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">30930 ms</span>
+                <span class="method-start">26669 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

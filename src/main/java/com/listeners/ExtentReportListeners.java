@@ -20,7 +20,7 @@ public class ExtentReportListeners {
 	static final String OUTPUT_FOLDER = "./reports/";
 	static final String FILE_NAME = "TestExecutionReport1.html";
 
-	public static ExtentReports getExtentReport() {
+	public synchronized static ExtentReports getExtentReport() {
 
 		if (extent == null) {
 			Path path = Paths.get(OUTPUT_FOLDER);

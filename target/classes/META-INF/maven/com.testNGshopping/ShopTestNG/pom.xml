@@ -14,10 +14,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<messages.version>24.1.0</messages.version>
 	</properties>
 
 	<dependencies>
-		<!-- Cucumber Dependencies -->
+		<!-- Cucumber Dependencies which are mandatory -->
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-core</artifactId>
@@ -67,7 +68,33 @@
 			<artifactId>protobuf-java</artifactId>
 			<version>3.17.0</version>
 		</dependency>
+
+
+		<!-- Alure reports dependencies -->
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-cucumber7-jvm</artifactId>
+			<version>2.27.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-testng</artifactId>
+			<version>2.27.0</version>
+		</dependency>
+
 	</dependencies>
+	
+	<!-- Cucumber dependecies conflicts  -->
+	<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>messages</artifactId>
+			<version>${messages.version}</version>
+		</dependency>
+	</dependencies>
+	</dependencyManagement>
 
 
 	<build>
@@ -82,14 +109,11 @@
 						<suiteXmlFiles>
 							<suiteXmlFile>src/test/resources/testNg.xml</suiteXmlFile>
 						</suiteXmlFiles>
-						<argLine>-Dfile.encoding=UTF-8</argLine>
+						<!--<argLine>-Dfile.encoding=UTF-8</argLine>-->
 						<properties>
-							<property>
-								<name>dataproviderthreadcount</name>
-								<value>10</value>
-							</property>
 						</properties>
 					</configuration>
+
 				</plugin>
 
 				<!-- Maven Compiler Plugin -->
