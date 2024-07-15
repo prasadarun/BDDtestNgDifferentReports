@@ -73,7 +73,7 @@ public class JavaScriptUtil {
 	public void sendKeysUsingWithId(String id, String value) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("document.getElementById('" + id + "').value='" + value + "'");
-						  //document.getElementById('input-email').value ='tom@gmail.com'
+		// document.getElementById('input-email').value ='tom@gmail.com'
 	}
 
 	public void scrollPageDown() {
@@ -100,8 +100,5 @@ public class JavaScriptUtil {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].style.border='3px solid red'", element);
 	}
-
-
-
 
 }

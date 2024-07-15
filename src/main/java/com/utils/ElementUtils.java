@@ -34,7 +34,9 @@ public class ElementUtils {
 	public WebElement getElement(By locator) {
 
 		WebElement ele = driver.findElement(locator);
-		if(Boolean.parseBoolean(DriverFactory.highlight)) { jsUtil.flash(ele); }
+//		if (Boolean.parseBoolean(DriverFactory.highlight)) {
+//			jsUtil.flash(ele);
+//		}
 		jsUtil.drawBorder(ele);
 		jsUtil.scrollIntoView(ele);
 		return ele;
@@ -464,15 +466,12 @@ public class ElementUtils {
 
 	}
 
-
-
 	public void takeElementScreenshot(By locator) {
 		// TODO Auto-generated method stub
 		WebElement element = getElement(locator);
-        // Scroll element into view
+		// Scroll element into view
 		jsUtil.scrollIntoView(element);
 
 	}
-
 
 }

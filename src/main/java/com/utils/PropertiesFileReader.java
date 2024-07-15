@@ -7,9 +7,7 @@ import java.util.Properties;
 
 public class PropertiesFileReader {
 
-
-public static Properties readProperties() throws FileNotFoundException {
-
+	public static Properties readProperties() throws FileNotFoundException {
 
 		Properties prop = new Properties();
 		FileInputStream ip = new FileInputStream("./src/test/resources/config/config.properties");

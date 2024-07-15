@@ -26,6 +26,7 @@ Feature: Login Functionality
     Then User should not be login successfully
 
   
+ @login
   Scenario: Login with empty email
     And User enters the valid password "Test@1234" into password text field
     And Click on Login button

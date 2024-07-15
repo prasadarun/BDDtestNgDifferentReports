@@ -11,9 +11,6 @@ public class TimeUtil {
 
 	public static final int EMAIL_CHAR_LENGTH = 10;
 
-
-
-
 	public static void smallWait() {
 		try {
 			Thread.sleep(SMALL_TIME_OUT);

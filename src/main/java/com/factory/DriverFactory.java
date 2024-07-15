@@ -17,7 +17,6 @@ public class DriverFactory {
 	private static WebDriver driver;
 	private static ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
 
-
 	public static void initializeDriver(String browserName) {
 		switch (browserName.toLowerCase()) {
 		case "chrome":
@@ -43,37 +42,31 @@ public class DriverFactory {
 		}
 
 		tlDriver.set(driver);
-		}
-
-
-
-	public static String takeScreenshot(WebDriver driver) {
-	    File srcFile = ((TakesScreenshot) tlDriver.get()).getScreenshotAs(OutputType.FILE);
-	    String path = System.getProperty("user.dir") + "\\screenshot\\" + System.currentTimeMillis() + ".png";
-	    File destination = new File(path);
-	    try {
-	        FileHandler.copy(srcFile, destination);
-	        System.out.println("Screenshot captured: " + path);
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	    }
-	    return path;
 	}
 
+	public static String takeScreenshot(WebDriver driver) {
+		File srcFile = ((TakesScreenshot) tlDriver.get()).getScreenshotAs(OutputType.FILE);
+		String path = System.getProperty("user.dir") + "\\screenshot\\" + System.currentTimeMillis() + ".png";
+		File destination = new File(path);
+		try {
+			FileHandler.copy(srcFile, destination);
+			System.out.println("Screenshot captured: " + path);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return path;
+	}
 
 	public synchronized static void quitDriver() {
-        if (driver != null) {
-            driver.quit();
-            tlDriver.remove();
+		if (driver != null) {
+			driver.quit();
+			tlDriver.remove();
 
-        }
-    }
+		}
+	}
 
 	public static WebDriver getDriver() {
 		return tlDriver.get();
 	}
-
-
-
 
 }

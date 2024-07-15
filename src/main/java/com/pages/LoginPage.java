@@ -9,7 +9,6 @@ import com.utils.TimeUtil;
 
 public class LoginPage {
 
-
 	private ElementUtils util;
 
 	public LoginPage(WebDriver driver) {

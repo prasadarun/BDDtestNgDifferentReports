@@ -73,6 +73,10 @@ public class LoginSteps {
 
 		loginpage.clickOnSubmitBtn();
 
+		if (loginpage.logoutBtnDisplayed()) {
+			Assert.assertFalse(loginpage.logoutBtnDisplayed());
+		}
+
 	}
 
 }

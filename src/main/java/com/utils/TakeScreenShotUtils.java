@@ -19,7 +19,6 @@ import com.factory.DriverFactory;
 
 public class TakeScreenShotUtils {
 
-
 	public static String getScreenshot() {
 		File srcFile = ((TakesScreenshot) DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir") + "\\screenshot\\" + System.currentTimeMillis() + ".png";
@@ -30,32 +29,31 @@ public class TakeScreenShotUtils {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		System.out.println("Path of screen shot"+path);
+		System.out.println("Path of screen shot" + path);
 		return path;
 
 	}
 
 	public static byte[] getScreenshotAsBytes() {
-        byte[] screenshotBytes = null;
-        try {
-            // Create a Robot instance for screen capture
-            Robot robot = new Robot();
+		byte[] screenshotBytes = null;
+		try {
+			// Create a Robot instance for screen capture
+			Robot robot = new Robot();
 
-            // Capture the screen rectangle
-            Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
-            BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
+			// Capture the screen rectangle
+			Rectangle screenRect = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize());
+			BufferedImage screenFullImage = robot.createScreenCapture(screenRect);
 
-            // Write the captured image to a byte array output stream
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ImageIO.write(screenFullImage, "png", baos);
-            baos.flush();
-            screenshotBytes = baos.toByteArray();
-            baos.close();
-        } catch (AWTException | IOException ex) {
-            ex.printStackTrace();
-        }
-        return screenshotBytes;
-    }
-
+			// Write the captured image to a byte array output stream
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(screenFullImage, "png", baos);
+			baos.flush();
+			screenshotBytes = baos.toByteArray();
+			baos.close();
+		} catch (AWTException | IOException ex) {
+			ex.printStackTrace();
+		}
+		return screenshotBytes;
+	}
 
 }
