@@ -23,10 +23,10 @@ public class GenerateRandomString {
 		return sb;
 
 	}
-	
+
 	public static void main(String args[]) {
 		StringBuilder vaue = generateRandomString();
-		System.out.println(vaue+"@gmail.com");
+		System.out.println(vaue + "@gmail.com");
 	}
 
 }

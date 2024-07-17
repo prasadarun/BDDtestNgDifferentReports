@@ -20,8 +20,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.factory.DriverFactory;
-
 public class ElementUtils {
 	private WebDriver driver;
 	private JavaScriptUtil jsUtil;

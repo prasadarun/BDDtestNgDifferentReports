@@ -30,7 +30,7 @@ public class AppConstants {
 	public static final String LOGIN_COLOR_LINK = "rgba(35, 161, 209, 1)";
 
 	public static final List<String> MACBOOK_SEARCH_RESULTS = Arrays.asList("MacBook", "MacBook Air", "MacBook Pro");
-	
+
 	public static final String REGISTRATION_SUCCESSFULL = "Your Account Has Been Created!";
 
 }

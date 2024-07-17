@@ -3,7 +3,6 @@ package com.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import com.factory.DriverFactory;
 import com.utils.ElementUtils;
 import com.utils.TimeUtil;
 
@@ -13,7 +12,7 @@ public class RegistrationPage {
 
 	public RegistrationPage(WebDriver driver) {
 		util = new ElementUtils(driver);
-		System.out.println("utils driver"+ driver);
+		System.out.println("utils driver" + driver);
 	}
 
 	private By myAccount = By.xpath("//span[contains(text(),'My Account')]");
@@ -112,8 +111,5 @@ public class RegistrationPage {
 	public String isLoginSuccessful() {
 		return util.doGetElementText(registerSuccessMesg);
 	}
-	
-	
-
 
 }

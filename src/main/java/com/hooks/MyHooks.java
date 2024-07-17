@@ -11,19 +11,16 @@ import org.openqa.selenium.WebDriver;
 import com.factory.DriverFactory;
 import com.utils.ElementUtils;
 import com.utils.PropertiesFileReader;
-import com.utils.TakeScreenShotUtils;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
-import io.qameta.allure.Allure;
 
 public class MyHooks {
 
 	WebDriver driver;
 	Properties prop;
 	ElementUtils utils;
-
 
 	@Before
 	public void setup() throws FileNotFoundException {
@@ -54,7 +51,7 @@ public class MyHooks {
 
 	@After
 	public void tearDown() {
-		DriverFactory.quitDriver();
+		// DriverFactory.quitDriver();
 
 	}
 
