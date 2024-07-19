@@ -28,3 +28,33 @@ Feature: My Account Page Functionality
       | Transactions       |
       | News Letters       |
       | Logout             |
+
+  @myaccount1
+  Scenario: after successful login validate the list of menus under "My account" in myAccount page
+    Given user login sucessfully and navigated to My Account page
+    Then following menus should be available under "My Account" header
+      | Edit your account information    |
+      | Change your password             |
+      | Modify your address book entries |
+      | Modify your wish list            |
+    Then validate that all the submenu links should receive response code 200
+
+  @myaccount1
+  Scenario: after successful login validate the footer list menus under "My account" in myAccount page
+    Given user login sucessfully and navigated to My Account page
+    Then following footer menu list will be displyed under "My Account" header
+      | Information      |
+      | Customer Service |
+      | Extras           |
+      | My Account       |
+
+  @myaccount1
+  Scenario: after successful login validate the footer  information sublist under "My account" in myAccount page
+    Given user login sucessfully and navigated to My Account page
+    Then following footer information submenu list will be displyed under "My Account" header
+      | About Us             |
+      | Delivery Information |
+      | Privacy Policy       |
+      | Terms & Conditions   |
+
+    Then check all submenu are having response code 200

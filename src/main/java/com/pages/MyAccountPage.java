@@ -1,9 +1,16 @@
 package com.pages;
 
+import static org.testng.Assert.ARRAY_MISMATCH_TEMPLATE;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.utils.ElementUtils;
 import com.utils.TimeUtil;
@@ -36,6 +43,20 @@ public class MyAccountPage {
 	private By asideMenuList = By.xpath("//a[@class='list-group-item']");
 
 	private By logoutMenu = By.xpath("//a[@class='list-group-item' and contains(text(),'Logout')]");
+	
+	private By listOfMyAccount = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[1]/li/a");
+	
+	private By listOfMyOrders = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[2]/li/a");
+	
+	private By listOfMyAffliciateAccount = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[3]/li/a");
+	
+	private By listOfNewLetters = By.xpath("(//div[@id='content']//ul[@class='list-unstyled'])[4]/li/a");
+	
+	private By listOfFooters = By.xpath("//div[@class='col-sm-3']/h5");
+	
+	private By footerInformationSubMenu = By.xpath("(//div[@class='col-sm-3']/h5)[1]/following::ul[@class='list-unstyled' and position()=1]/li/a");
+	
+	
 
 	public String getfirstNameValue() {
 		return util.doGetAttributeValue(firstNameValue, "value");
@@ -73,5 +94,40 @@ public class MyAccountPage {
 	public boolean logoutBtnDisplayed() {
 		return util.doIsDisplayed(logoutMenu);
 	}
-
+	
+	public List<String> getMyAccountSubMenu(){
+		
+		System.out.println("Actual output"+ util.getElementsTextList(listOfMyAccount));
+		return util.getElementsTextList(listOfMyAccount);
+	}
+	
+	public List<String> getMyOrdersubMenu(){
+		return util.getElementsTextList(listOfMyOrders);
+	}
+	
+	public List<String> getMyAffliciatesubMenu(){
+		return util.getElementsTextList(listOfMyAffliciateAccount);
+	}
+	
+	public List<String> getNewsubMenu(){
+		return util.getElementsTextList(listOfNewLetters);
+	}
+	
+	
+	public boolean getReponseCodeForMyAccount() {
+		return util.checkResponseCode(listOfMyAccount);
+	}
+	
+	public List<String> getListOfFooterHeaders() {
+		return util.getElementsTextList(listOfFooters);
+	}
+	
+	public List<String> getfooterInformationSubMenu(){
+		return util.getElementsTextList(footerInformationSubMenu);
+	}
+	
+	public boolean getReponseCodeForInformationSubMenu() {
+		return util.checkResponseCode(footerInformationSubMenu);
+	}
+	
 }

@@ -20,6 +20,10 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
 public class ElementUtils {
 	private WebDriver driver;
 	private JavaScriptUtil jsUtil;
@@ -470,6 +474,36 @@ public class ElementUtils {
 		// Scroll element into view
 		jsUtil.scrollIntoView(element);
 
+	}
+
+	public boolean checkResponseCode(By locator) {
+
+		List<String> submenuLinks = new ArrayList();
+
+		List<WebElement> elements = getElements(locator);
+
+		for (WebElement e : elements) {
+			submenuLinks.add(e.getAttribute("href"));
+		}
+
+		for (String link : submenuLinks) {
+			try {
+				URL url = new URL(link);
+				HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+				connection.setRequestMethod("GET");
+				int statusCode = connection.getResponseCode();
+
+				if (statusCode != 200) {
+					System.err.println("Link " + link + " returned status code " + statusCode);
+					return false;
+				}
+			} catch (IOException e) {
+				throw new RuntimeException("Failed to check link " + link, e);
+			}
+
+		}
+
+		return true;
 	}
 
 }

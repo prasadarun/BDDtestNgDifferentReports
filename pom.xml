@@ -104,6 +104,13 @@
         <artifactId>commons-collections4</artifactId>
         <version>4.4</version>
     </dependency>
+    
+    <!-- To check the http responses   -->
+    <dependency>
+    <groupId>org.apache.httpcomponents</groupId>
+    <artifactId>httpclient</artifactId>
+    <version>4.5.13</version>
+</dependency>
 
 	</dependencies>
 	

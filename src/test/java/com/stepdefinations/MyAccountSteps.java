@@ -1,5 +1,7 @@
 package com.stepdefinations;
 
+import static org.testng.Assert.assertTrue;
+
 import java.util.List;
 import java.util.Map;
 
@@ -73,5 +75,50 @@ public class MyAccountSteps {
 		List<String> actual = myaccount.followingAsideMenuList();
 		Assert.assertEquals(actual.toString(), expected.toString());
 	}
+
+	@Then("following menus should be available under \"My Account\" header")
+	public void following_menu_under_MyAccount(DataTable datatable) {
+		List<String> expected = datatable.asList(String.class);
+		List<String> actual = myaccount.getMyAccountSubMenu();
+		Assert.assertEquals(actual, expected);
+	}
+
+	@Then("validate that all the submenu links should receive response code 200")
+	public void sub_menu_should_receive_response_code_200() {
+		boolean b = myaccount.getReponseCodeForMyAccount();
+		Assert.assertTrue(b);
+	}
+
+	@Then("following footer menu list will be displyed under \"My Account\" header")
+	public void getFooterHeaderList(DataTable datatable) {
+
+		List<String> headerMenuexpected = datatable.asList(String.class);
+
+		List<String> headerMenuActual = myaccount.getListOfFooterHeaders();
+
+		Assert.assertEquals(headerMenuActual, headerMenuexpected);
+
+	}
+
+	@Then("following footer information submenu list will be displyed under \"My Account\" header")
+	public void getInfirmationSubMenuList(DataTable data) {
+		List<String> actual = data.asList(String.class);
+		List<String> expected = myaccount.getfooterInformationSubMenu();
+		Assert.assertEquals(actual, expected);
+
+	}
+	
+	@Then("check all submenu are having response code 200")
+	public void getResponseCodeforInfirmationSubMenu() {
+		
+	
+		boolean b = myaccount.getReponseCodeForInformationSubMenu();
+		
+		assertTrue(b);
+		
+		
+	}
+	
+	
 
 }
