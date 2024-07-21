@@ -7,8 +7,18 @@ Feature: My Account Page Functionality
     And click on Login button
 
   @product
-  Scenario: after successful login validate the UI elements in myAccount page
-    Given user login sucessfully and navigated to My Account page
-    When user enter the product "Macbook" in searchbox 
-    And click on search button
-    
+  Scenario Outline: After successful login, validate the UI elements on the My Account page
+    When the user logs in successfully and navigates to the My Account page
+    And enters the product "<product>" in the search box
+    And clicks on the search button
+    Then I should see results related to "<product>"
+    And the results should include:
+    # added expected results for showing header in logs
+    	|expectedResults  |
+      | <searchResults> |
+
+    Examples: 
+      | product | searchResults                                    |
+      | MacBook | MacBook, MacBook Air, MacBook Pro                |
+      | apple   | Apple Cinema 30"                                 |
+      | Samsung | Samsung SyncMaster 941BW,Samsung Galaxy Tab 10.1 |
