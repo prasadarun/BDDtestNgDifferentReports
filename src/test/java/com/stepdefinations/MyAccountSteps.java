@@ -107,18 +107,14 @@ public class MyAccountSteps {
 		Assert.assertEquals(actual, expected);
 
 	}
-	
+
 	@Then("check all submenu are having response code 200")
 	public void getResponseCodeforInfirmationSubMenu() {
-		
-	
+
 		boolean b = myaccount.getReponseCodeForInformationSubMenu();
-		
+
 		assertTrue(b);
-		
-		
+
 	}
-	
-	
 
 }
