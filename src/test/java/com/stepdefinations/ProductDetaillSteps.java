@@ -1,5 +1,7 @@
 package com.stepdefinations;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -36,6 +38,35 @@ public class ProductDetaillSteps {
 		boolean b = productDetail.getProductCode(code);
 		Assert.assertTrue(b);
 	}
+	
+	
+	@When("user click on whishList menu")
+	public void clickOnWishListMenu() {
+		productDetail.clickOnWhishList();;
+	}
+	
+	@Then("validate the table cloumns of wishListPage:")
+	public void getCloumns(List<String> expectedColumns) {
+		List<String> actual = productDetail.getWishListProductsTableHeader();
+		List<String> expected = expectedColumns;
+		Assert.assertEquals(actual, expected);
+		
+	}
+	
+	 @When("user click on wishListMenu from mainMenu")
+	 public void clickWishListMenu() {
+		 productDetail.clickWhishListMenu();
+	 }
+	 
+	 @Then("validate the alertMsg add to cart {string}")
+	 public void getsucessMsg(String expected) {
+			String actual = productDetail.getsucessMsgAddToCart().toString().trim();
+			String expect = expected.toString().trim();
+
+			Assert.assertEquals(actual, expect);
+		}
+	
+	
 	
 	
 
