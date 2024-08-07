@@ -36,3 +36,5 @@ Feature: Registration Functionality
     Then following details should be correctly displayed:
       | FirstName | LastName | Email        | Telephone  |
       | priya     | prasad   | dynamicvalue | 1234567890 |
+      
+      

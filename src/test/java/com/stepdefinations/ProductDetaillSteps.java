@@ -7,9 +7,10 @@ import org.testng.Assert;
 
 import com.factory.DriverFactory;
 import com.pages.ProductDetailPage;
-import com.pages.ProductsPage;
 
-import io.cucumber.java.en.*;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 
 public class ProductDetaillSteps {
 	
@@ -66,7 +67,50 @@ public class ProductDetaillSteps {
 			Assert.assertEquals(actual, expect);
 		}
 	
+	 @Then("Validate the product details of wishList")
+	 public void getDetails(List<String> expectedWishListItems) {
+		 
+		List<String> actual =  productDetail.getColumnDetails();
+		
+		List<String> expected = expectedWishListItems;
+		
+		Assert.assertEquals(actual,expected);
+		
+	 }
+	 
+	 @When("user click on review tab")
+	 public void userclickOnReviewTab() {
+		 
+		 productDetail.clickOnReviewTab();
+	 }
+	 
+	 @Then("validate the yourName text field should have following {string}")
+	 public void assertYourName(String expectedYourName) {
+		String actual =  productDetail.getYourName();
+		String expected = expectedYourName;
+		
+		expected = expected.replace("\u00A0", " ").trim();
+		actual = actual.replace("\u00A0", " ").trim();
+		
+		Assert.assertEquals(actual,expected);
+	 }
 	
+	@Then("validate the tab heading text")
+	public void getTabHeadings(List<String> expectedHeadingsText) {
+		List<String> actual = productDetail.getHeadingActualText();
+		Assert.assertEquals(actual, expectedHeadingsText);
+	}
+	
+	
+	@When("user submit rating with any value")
+	public void submitRating() {
+		productDetail.submitReview();
+	}
+	
+	@Then("validate the error message will be displayed")
+	public void assertAlertMsg() {
+		Assert.assertTrue(productDetail.alertDisplayed());	
+	}
 	
 	
 
